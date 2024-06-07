@@ -1,0 +1,12 @@
+name: annas-comp-action
+description: runs two actions
+runs:
+  using: "composite"
+  steps:
+    - name: setup node js 20
+      uses: actions/setup-node@v4
+      with: 
+        node-version: '20'
+    - name: Do 'npm ci'
+      run: npm ci
+      shell: bash
