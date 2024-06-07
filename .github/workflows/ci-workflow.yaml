@@ -28,8 +28,10 @@ jobs:
       id-token: write
     environment:
       name: github-pages
+      url: ${{ steps.annasdeployment.outputs.page_url }}
     steps:
       - name: deploy
+        id: annasdeployment
         uses: actions/deploy-pages@v4
 
 
