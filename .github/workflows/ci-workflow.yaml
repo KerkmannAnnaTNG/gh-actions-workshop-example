@@ -29,6 +29,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.annasdeployment.outputs.page_url }}
+    outputs:
+      my_url: ${{ steps.annasdeployment.outputs.page_url }}
     steps:
       - name: deploy
         id: annasdeployment
@@ -54,7 +56,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --project ${{ matrix.browser }}
         env:
-          PLAYWRIGHT_BASE_URL: ${{ needs.cd-pipeline.outputs.page_url }}
+          PLAYWRIGHT_BASE_URL: ${{ needs.cd-pipeline.outputs.my_url }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
