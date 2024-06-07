@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: execute my composed action
-        uses: ./.github/actions/install@v1
+        uses: actions/install@v1
       - run: npm run prettier
       - run: npm run typecheck
       - run: npm run test
