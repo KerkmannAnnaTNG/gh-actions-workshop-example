@@ -3,7 +3,7 @@ run-name: Annas ci-workflow
 on: [push, workflow_dispatch] # workflow_dispatch: workflow can be triggered manually
 jobs:
   ci-pipeline:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v4
